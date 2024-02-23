@@ -1,0 +1,20 @@
+.nav{
+    background-color:darkblue;
+}
+    
+.nav li{
+    display: inline-block;
+    color: white;
+    font-size: 14px;
+    border-left: 1px solid white;
+    margin: 10px;
+    padding-left: 15px ;
+    
+}
+i.fa-house{
+    position: absolute;
+    top: 13px;
+    right: 1185px;
+    font-size: 25px;
+    
+}
