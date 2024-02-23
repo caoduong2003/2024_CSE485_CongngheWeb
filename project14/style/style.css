@@ -1,0 +1,25 @@
+.container{
+  padding: 20px 30px;
+ }
+
+  .basic, .contact, .option{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+  }
+  p {
+    font-weight: bold;
+    font-size: 15px;
+  }
+   #container {
+                width: 1000px;
+                margin: 20px auto;
+            }
+            .ck-editor__editable[role="textbox"] {
+                /* Editing area */
+                min-height: 200px;
+            }
+            .ck-content .image {
+                /* Block images */
+                max-width: 80%;
+                margin: 20px auto;
+            }

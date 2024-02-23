@@ -26,36 +26,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
-  <style>
-   
-    .navbar{
-      background-color: #000099;
-      overflow: hidden;
-    }
-
-    .navbar :last-child{
-      border: none;
-    }
-    .navbar li{
-     list-style: none;
-     display: inline-block; 
-     border-right: 1px solid white;
-    }
-    .navbar a{
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 15px;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 15px 16px;
-     
-    }
-
-    .navbar a:hover{
-      background-color:  #1aa3ff;
-    }
-  </style>
+  
 </body>
 </html>
