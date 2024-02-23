@@ -1,14 +1,17 @@
 .navbar{
+  display: flex;
+  
   background-color: #000099;
   overflow: hidden;
 }
-
+.navbar ul{
+  display: flex;
+}
 .navbar :last-child{
   border: none;
 }
 .navbar li{
  list-style: none;
- display: inline-block; 
  border-right: 1px solid white;
 }
 .navbar a{
@@ -24,4 +27,19 @@
 .navbar a:hover{
   background-color:  #1aa3ff;
 }
+@media screen and (max-width: 700px) {
+  .navbar{
+    justify-content: center;
+  }
+  .navbar ul{
+    display: block;
+  }
+  .navbar li{
+    margin-top: 10px;
+    border-right: none;
+  }
 
+  .navbar a{
+    padding: 2px 10px;
+  }
+}
