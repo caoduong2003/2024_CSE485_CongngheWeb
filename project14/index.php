@@ -118,9 +118,9 @@ $countries = array (
       <p>Are you human?</p>
       <input type="text">
     </div>
-    <div>
-      <input type="submit" value="submit">
-      <button>Cancel</button>
+    <div class="btn">
+      <input type="submit" value="submit" class="btn-submit">
+      <button class="btn-cancel">Cancel</button>
     </div>
 
             
