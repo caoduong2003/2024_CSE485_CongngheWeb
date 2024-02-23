@@ -1,0 +1,26 @@
+.course {
+    display: flex;
+    flex-direction: column;
+    background-color: #c5d0c2;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.course h2 {
+    color: #284693;
+}
+
+.course p {
+    margin-top: 5px;
+    color: #181c1b;
+}
+
+.scren
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.pic
+{
+    width:100%;
+}
