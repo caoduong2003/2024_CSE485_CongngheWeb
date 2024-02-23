@@ -4,10 +4,14 @@ echo'<h4 class= "basic"> Basic Info </h4>';
 echo '<div>Employee ID <input style ="width:70%"></div>';
 echo '<div>Last name <input style ="width:70%"></div>';
 echo '<div>First name <input style ="width:70%"></div>';
-echo '<div>Gender<input type ="radio">Male</div>';
-echo '<div><input type ="radio">Female</div>';
-echo '<div><input type ="radio">XXX</div>';
-echo '<div><input type ="radio">ZZZ</div>';
+echo '<div>Gender';
+$genders = [
+    "Male","Female","XXX","ZZZ"
+];
+foreach($genders as $gender) {
+    echo '<input name = "gioi tinh " type ="radio">'.$gender.'';
+}
+echo '</div>';
 echo '<div>Title<input style ="width:70%"></div>';
 echo '<div>Sufix<input style ="width:70%"></div>';
 echo '<div>BirthDate <input style ="width:70%"></div>';
@@ -41,8 +45,14 @@ echo '<div>US Home Phone <input style ="width:70%"></div>';
 echo '<div>Photo <input style ="width:70%"></div>';
 echo '<h4>Optional Info</h4>';
 echo '<div>Notes <input style ="height: 10%;width:70%"></div>';
-echo '<div>Preferred Shift<input type ="checkbox">Regular</div>';
-echo '<div><input type ="checkbox">Gravy Yard</div>';
+$preferreds = [
+    "Regular", "Gravy Yard"
+];
+echo '<div>Sreferred Shift';
+foreach($preferreds as $preferred) {
+    echo '<input name = "preferred shift " type ="checkbox">'.$preferred.'';
+}
+echo '</div>';
 echo '<div>Active<input type ="checkbox"></div>';
 echo '<div>Are you human? <input style ="width:70%"></div>';
 echo '<div><button>Submit</button> <button>Cancel</button></div>';
