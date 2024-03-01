@@ -1,0 +1,19 @@
+
+.avatar{
+    display: flex;
+}
+.body{
+    width: 32%;
+    display: flex;
+    border: 1px solid royalblue;
+    margin: 5% 0 0 30% ;
+    padding: 5px 0 0 20px;
+}
+.account{
+    margin-top: 15px;
+}
+.btn{
+    height: 26px;
+    background-color: goldenrod;
+    margin-left: 25px;
+}
