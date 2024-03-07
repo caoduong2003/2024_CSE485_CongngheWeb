@@ -1,9 +1,9 @@
 # 2024_CSE485_CongngheWeb
 
-# Vũ Cao Dương
+Vũ Cao Dương
 
-# Nguyễn Hoàng Hiệp
+Nguyễn Hoàng Hiệp
 
-# Nguyễn Tiến Dũng
+Nguyễn Tiến Dũng
 
-# Hồ Công Thành
+Hồ Công Thành
