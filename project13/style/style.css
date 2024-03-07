@@ -1,0 +1,28 @@
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 25px;
+  row-gap: 10px;
+
+}
+
+.course {
+  
+  
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.course h3 {
+  text-transform: uppercase;
+  color: #333;
+}
+.course p {
+  margin: 0;
+  margin-top: 5px;  
+  color: #666;
+}
+
+.course img{
+  width: 100%;
+}
