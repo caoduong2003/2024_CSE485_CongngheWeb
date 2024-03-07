@@ -1,7 +1,5 @@
 # 2024_CSE485_CongngheWeb
 
-# Author:
-
 # Vũ Cao Dương
 
 # Nguyễn Hoàng Hiệp
