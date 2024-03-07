@@ -1,0 +1,31 @@
+.pic{
+    width: 225px;
+    height: 250px;
+}
+.product-list{
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+.pagination a {
+    font-size: 30px;
+    text-decoration: none ;
+}
+.product
+{
+    padding: 10px;
+}
+.pagination
+{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: #af032b;
+    font-weight: bold;
+}
+.product:hover{
+    transition: transform 0.2s ease;
+    transform: scale(1.25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+}
