@@ -4,5 +4,4 @@ namespace models;
 
 class User
 {
-  
 }

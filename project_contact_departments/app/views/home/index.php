@@ -1,0 +1,1 @@
+// hiển thị các khoa và giới thiệu
