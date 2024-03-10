@@ -21,8 +21,8 @@
 
     // require_once ROOT.'app/controllers/DepartmentController.php';
     ?>
+    
     <div class="container">
-
     <div class="row row-cols-1 row-cols-md-4 g-3 py-3 px-3 m-0">
         <!-- động -->
         <?php foreach ($departments as $department): ?>
@@ -43,11 +43,17 @@
                         </h5>
                     </div>
                 </div>
+            </a>
+        </div>
 
             <?php endforeach; ?>
 
         </div>
     </div>
+    </div>
+
+ 
+
     <footer>
         <?php
         // hiển thị các khoa và giới thiệu'
