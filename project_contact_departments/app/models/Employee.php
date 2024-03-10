@@ -1,7 +1,7 @@
 <?php
 
 
-class Employee
+class Employee 
 {
   private $emoloyeeId;
   private $fullName;

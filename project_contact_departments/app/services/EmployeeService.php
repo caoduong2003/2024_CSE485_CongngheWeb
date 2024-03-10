@@ -1,28 +1,24 @@
-<?php
-
-
+<?php 
 require_once ROOT.'/app/libs/DBconnection.php';
 require_once ROOT.'/app/models/Department.php';
-class DepartmentService {
+
+class EmployeeService {
   public function getAllDepartment(){
     $dbconnect = new DBconnection();
     $conn = $dbconnect->getConn();
     // $conn = new PDO("mysql:host=localhost;dbname=project","root","hiep2003");
     if($conn!=null){
-      $sql = "SELECT * FROM departments WHERE departments.ParentDepartmentId IS null";
+      $sql = "SELECT * FROM employees WHERE departments.ParentDepartmentId IS null";
       $stsm = $conn->query($sql);
-      $departments = [];
+      $employees = [];
       while($row = $stsm->fetch()){
-        $department = new Department($row['DepartmentID'], $row['DepartmentName'], 
-            $row['Address'], $row['Email'], $row['Phone'], $row['Logo'],$row['Website'], $row['ParentDepartmentId']);
+        $employee = new Employee($row['EmployeeId'], $row['FullName'],  
+            $row['Address'], $row['Email'], $row['MobilePhone'], $row['Position'],$row['Avatar'], $row['DepartmentId']);
         // $department = $row['DepartmentName'];
-        $departments[] = $department;
+        $employees[] = $employee;
       }
-      return $departments;
+      return $employees;
     }
     
-    
-    
-
   }
 }

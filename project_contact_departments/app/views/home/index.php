@@ -22,6 +22,7 @@
     <div class="row row-cols-1 row-cols-md-4 g-3 py-3 px-3 m-0">
         <!-- động -->
         <?php foreach ($departments as $department): ?>
+  
         <div class="col">
             <a href="#" class="text-decoration-none">
                 <div class="card text-center">
