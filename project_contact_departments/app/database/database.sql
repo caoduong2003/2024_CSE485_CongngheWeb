@@ -26,16 +26,21 @@ CREATE TABLE IF NOT EXISTS `departments` (
   `Address` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Phone` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Logo` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Logo` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `Website` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `ParentDepartmentId` int NOT NULL,
+  `ParentDepartmentId` int DEFAULT NULL,
   PRIMARY KEY (`DepartmentID`),
   KEY `ParentDepartmentId` (`ParentDepartmentId`),
   CONSTRAINT `departments_ibfk_1` FOREIGN KEY (`ParentDepartmentId`) REFERENCES `departments` (`DepartmentID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table project.departments: ~0 rows (approximately)
-DELETE FROM `departments`;
+-- Dumping data for table project.departments: ~5 rows (approximately)
+INSERT INTO `departments` (`DepartmentID`, `DepartmentName`, `Address`, `Email`, `Phone`, `Logo`, `Website`, `ParentDepartmentId`) VALUES
+	(1, 'Khoa CNTT', '296 Arrowood Parkway', 'mgrafton0@dmoz.org', '6294137397', 'http://dummyimage', NULL, NULL),
+	(2, 'Khoa CT', '0157 Myrtle Lane', 'lwilley1@hp.com', '5852896214', 'http://dummyimage.com', NULL, NULL),
+	(3, 'Ngành cntt', '27 Grasskamp Park', 'hcapsey2@mashable.com', '3469585401', 'http://dummyimage.', NULL, 1),
+	(4, 'Ngành ktpm', '379 Scott Parkway', 'jrollo3@canalblog.com', '7301504062', 'http://dummyimage', NULL, 1),
+	(5, 'Ngành ct', '9 Muir Terrace', 'pgilderoy4@nasa.gov', '3338439406', 'http://dummyimage.', NULL, 2);
 
 -- Dumping structure for table project.employees
 CREATE TABLE IF NOT EXISTS `employees` (
@@ -50,10 +55,16 @@ CREATE TABLE IF NOT EXISTS `employees` (
   PRIMARY KEY (`EmployeeId`),
   KEY `DepartmentId` (`DepartmentId`),
   CONSTRAINT `employees_ibfk_1` FOREIGN KEY (`DepartmentId`) REFERENCES `departments` (`DepartmentID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table project.employees: ~0 rows (approximately)
-DELETE FROM `employees`;
+-- Dumping data for table project.employees: ~6 rows (approximately)
+INSERT INTO `employees` (`EmployeeId`, `FullName`, `Address`, `Email`, `MobilePhone`, `Position`, `Avatar`, `DepartmentId`) VALUES
+	(1, 'Hồ Công Thành', 'Nghệ An', 'thanh@gmail.com', '0988888888', 'Trưởng khoa CNTT', NULL, 3),
+	(2, 'Hồ Hoàng Thanh', 'Huế', 'hoangthanh@gmail.com', '0988888997', 'Nhân viên CNTT', NULL, 3),
+	(3, 'Nguyễn Hoàng Hiệp', 'Hà Nội', 'hieo@gmail.com', '0983565888', 'Trưởng khoa KTPM', NULL, 4),
+	(4, 'Nguyễn Huy Hoàng', 'Bắc Ninh', 'hoang@gmail.com', '0988824564', 'Nhân viên ', NULL, 4),
+	(5, 'Vũ Cao Dương', 'Thái Nguyên', 'dương@gmail.com', '0983345564', 'Trưởng khoa công trình', NULL, 5),
+	(6, 'Nguyễn Tiến Dũng', 'Phú Thọ', 'dung@gmail.com', '09135567864', 'Nhân viên công trình', NULL, 5);
 
 -- Dumping structure for table project.users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -66,7 +77,6 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Dumping data for table project.users: ~0 rows (approximately)
-DELETE FROM `users`;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
