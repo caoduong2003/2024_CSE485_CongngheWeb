@@ -1,79 +1,10 @@
 <<<<<<< HEAD
 <?php
-$users = [
-    [
-       'name' =>'Hồ Công Thành',
-        'phone' => '0988888888',
-        'Department'=>'Ngành CNTT'
-    ],
 
-    [
-       'name' =>'Hồ Công Thành',
-        'phone' => '0988888888',
-        'Department'=>'Ngành CNTT'
-    ],
-    [
-       'name' =>'Hồ Công Thành',
-        'phone' => '0988888888',
-        'Department'=>'Ngành CNTT'
-    ],
-    [
-       'name' =>'Hồ Công Thành',
-        'phone' => '0988888888',
-        'Department'=>'Ngành CNTT'
-    ],
-    [
-       'name' =>'Hồ Công Thành',
-        'phone' => '0988888888',
-        'Department'=>'Ngành CNTT'
-    ],
-    [
-       'name' =>'Hồ Công Thành',
-        'phone' => '0988888888',
-        'Department'=>'Ngành CNTT'
-    ],
-    
-    [
-       'name' =>'Hồ Công Thành',
-        'phone' => '0988888888',
-        'Department'=>'Ngành CNTT'
-    ],
-    [
-        'name' =>'Hồ Công Thành',
-         'phone' => '0988888888',
-         'Department'=>'Ngành CNTT'
-     ],
-     [
-        'name' =>'Hồ Công Thành',
-         'phone' => '0988888888',
-         'Department'=>'Ngành CNTT'
-     ],
-     [
-        'name' =>'Hồ Công Thành',
-         'phone' => '0988888888',
-         'Department'=>'Ngành CNTT'
-     ],
-     
-     [
-        'name' =>'Hồ Công Thành',
-         'phone' => '0988888888',
-         'Department'=>'Ngành CNTT'
-     ],
-    [
-       'name' =>'Hồ Công Thành',
-        'phone' => '0988888888',
-        'Department'=>'Ngành CNTT'
-    ],
-    [
-       'name' =>'Hồ Công Thành',
-        'phone' => '0988888888',
-        'Department'=>'Ngành CNTT'
-    ],
-    ];
-$itemsPerPage = 5;
+$itemsPerPage = 4;
 $currentPage = isset($_GET['page'])? $_GET['page']:1;
-$totalPages = ceil(count($users) / $itemsPerPage);
-$currentPageItems = array_slice($users, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
+$totalPages = ceil(count($employees) / $itemsPerPage);
+$currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
 ?>
 
 <!DOCTYPE html>
@@ -134,53 +65,55 @@ $currentPageItems = array_slice($users, ($currentPage - 1) * $itemsPerPage, $ite
                             <th>Stt</th>
                             <th>Họ tên</th>
                             <th>Số điện thoại</th>
+                            <th>Địa chỉ</th>
                             <th>Đơn vị</th>
                             <th scope="col" colspan="3" class="text-center">Thao tác</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php $i=0 ;?>
-                        <?php foreach($currentPageItems as $user):?>
-                        <tr>
-                            <th scope="row"><?=++$i?> </th>
-                            <td><?= $user['name']?></td>
-                            <td><?= $user['phone']?></td>
-                            <td><?= $user['Department']?></td>
-                            <th scope="col">
-                                <a href="" class = "btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                            </th> 
-                            <th scope="col">
-                                <a href="" class = "btn btn-danger"><i class="bi bi-pencil-fill"></i></a>
-                            </th>   
-                            <th scope="col">
-                                <a href="" class = "btn btn-warning"><i class="bi bi-trash-fill"></i></a>
-                            </th>
-                            <!-- <th scope="col">
-                                <a href="" class = "btn btn-info"><i class="bi bi-key-fill"></i></a>
-                            </th> -->
-                        </tr>
-                      <?php endforeach; ?>
+                        <?php foreach($currentPageItems as $employe):?>
+                            <tr>
+                                <th scope="row"><?=++$i?> </th>
+                                <td><?= $employe -> getFullName();?></td>
+                                <td><?= $employe -> getMobilePhone();?></td>
+                                <<td><?= $employe -> getAddress();?></td>
+                                <<td><?= $employe -> getDepartmentId();?></td>
+                                <th scope="col">
+                                    <a href="" class = "btn btn-primary"><i class="bi bi-eye-fill"></i></a>
+                                </th> 
+                                <th scope="col">
+                                    <a href="" class = "btn btn-danger"><i class="bi bi-pencil-fill"></i></a>
+                                </th>   
+                                <th scope="col">
+                                    <a href="" class = "btn btn-warning"><i class="bi bi-trash-fill"></i></a>
+                                </th>
+                                <!-- <th scope="col">
+                                    <a href="" class = "btn btn-info"><i class="bi bi-key-fill"></i></a>
+                                </th> -->
+                            </tr>
+                        <?php endforeach; ?>
                         
                     </table>
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <div class="pagination" >
-            <?php if ($currentPage > 1): ?>
-                <a style="text-decoration: none;" href="?page=<?php echo $currentPage - 1; ?>">&laquo;</a>
-            <?php endif; ?>
-            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                <?php if ($i == $currentPage): ?>
-                    <span style="text-decoration: none;" class="active"><?php echo $i ;?></span>
-                <?php else: ?>
-                    <a style="text-decoration: none;" href="?page=<?php echo $i; ?>"><?php echo  $i ;?></a>
-                <?php endif; ?>
-            <?php endfor; ?>
-            <?php if ($currentPage < $totalPages): ?>
-                <a style="text-decoration: none;" href="?page=<?php echo $currentPage + 1; ?>">&raquo;</a>
-            <?php endif; ?>
-        </div>
-    </ul>
-</nav>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <div class="pagination">
+                                <?php if ($currentPage > 1): ?>
+                                    <a class="text-decoration-none" href="?page=<?php echo $currentPage - 1; ?>">&laquo;</a>
+                                <?php endif; ?>
+                                <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                                    <?php if ($i == $currentPage): ?>
+                                        <span class="active"><?php echo $i ; ?></span>
+                                    <?php else: ?>
+                                        <a class="text-decoration-none" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                                    <?php endif; ?>
+                                <?php endfor; ?>
+                                <?php if ($currentPage < $totalPages): ?>
+                                    <a class="text-decoration-none" href="?page=<?php echo $currentPage + 1; ?>">&raquo;</a>
+                                <?php endif; ?>
+                            </div>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>

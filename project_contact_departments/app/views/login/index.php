@@ -9,7 +9,7 @@
     </title>
 </head>
 <body>
-    <div class="container">
+<div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
                 <div class="card">
@@ -17,23 +17,22 @@
                         <h3 stype = "text-center">Login</h3>
                     </div>
                     <div class="card-body">
-                        <form action="../app/views/login/index.php" method="post">
+                        <form action="../..php" method="post">
                             <div class="mb-4 row">
                                 <label for="username" class="col-sm-2 col-form-label">User</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="user" name="user"" placeholder="Username">
+                                    <input type="text" class="form-control" id="" name="user"" placeholder="Username">
                                 </div>
                             </div>
                             <div class="mb-3 row">
                                 <label for="password" class="col-sm-2 col-form-label">Pass</label>
                                 <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+                                    <input type="password" class="form-control" id="" name="pass" placeholder="Password">
                                 </div>
                             </div>
+                            <button type = "submit" class="btn btn-primary" >Login</button>
                         </form> 
-                        <a class="btn btn-primary" href="#" role="button">Login</a>
                     </div>
-                    
                 </div>
                 <a style="text-decoration: none;" href="#" role="">Quên mật khẩu ?</a>
             </div>
