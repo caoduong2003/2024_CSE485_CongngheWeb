@@ -2,7 +2,10 @@
 define('ROOT',dirname(__FILE__,3));
 define('PATH','http://localhost/project_contact_departments');
 
-
+define('DB_HOST','localhost');
+define('DB_USER','root');
+define('DB_PASS','hiep2003');
+define('DB_NAME','project');
 // trang đăng nhập 
 
 // trang chủ hiển Khoa 
