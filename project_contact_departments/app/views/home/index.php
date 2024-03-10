@@ -1,7 +1,4 @@
-<?php
-// hiển thị các khoa và giới thiệu'
-include("../../views/navbar/index.php");
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +13,33 @@ include("../../views/navbar/index.php");
 </head>
 
 <body>
-    <div class="row row-cols-1 row-cols-md-3 g-3 py-3 px-3 m-0">
+    <?php
+    // hiển thị các khoa và giới thiệu'
+    include ROOT.'/app/views/navbar/index.php';
+
+    // require_once ROOT.'app/controllers/DepartmentController.php';
+    ?>
+
+    <div class="row row-cols-1 row-cols-md-4 g-3 py-3 px-3 m-0">
         <!-- động -->
+        <?php foreach ($departments as $department): ?>
         <div class="col">
+            <a href="#" class="text-decoration-none">
+                <div class="card text-center">
+                    <img src="https://adtimin.vn/wp-content/uploads/2017/09/Logo-1.jpg" class="card-img-top"
+                        alt="image" />
+                    <div class="card-body">
+                        <h5>
+                            <p class="card-title"><?= $department->getDepartmentName() ?> </p>
+                            <p class="card-text"><?= $department->getEmail()?></p>
+                        </h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <?php endforeach;?> 
+        <!-- <div class="col">
             <a href="#" class="text-decoration-none">
                 <div class="card text-center">
                     <img src="https://adtimin.vn/wp-content/uploads/2017/09/Logo-1.jpg" class="card-img-top"
@@ -56,25 +77,15 @@ include("../../views/navbar/index.php");
                     </div>
                 </div>
             </a>
-        </div>
-        <div class="col">
-            <a href="#" class="text-decoration-none">
-                <div class="card text-center">
-                    <img src="https://adtimin.vn/wp-content/uploads/2017/09/Logo-1.jpg" class="card-img-top"
-                        alt="image" />
-                    <div class="card-body">
-                        <h5>
-                            <p class="card-title">Khoa CNTT </p>
-                        </h5>
-                    </div>
-                </div>
-            </a>
-        </div>
+        </div> -->
     </div>
     <footer>
-        <?php
-        include("../../views/footer/index.php");
-        ?>
+    <?php
+    // hiển thị các khoa và giới thiệu'
+    include ROOT.'/app/views/footer/index.php';
+
+    // require_once ROOT.'app/controllers/DepartmentController.php';
+    ?>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

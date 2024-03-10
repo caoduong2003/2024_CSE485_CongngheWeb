@@ -4,7 +4,7 @@ CREATE TABLE Departments(
 	Address VARCHAR(30) NOT NULL,
 	Email VARCHAR(30) NOT NULL ,
 	Phone VARCHAR(30) NOT NULL ,
-	Logo VARCHAR(30) NOT NULL ,
+	Logo VARCHAR(30) ,
 	Website VARCHAR(30),
 	ParentDepartmentId INT NOT NULL ,
 	FOREIGN KEY (ParentDepartmentId) REFERENCES Departments (DepartmentId)
