@@ -1,95 +1,11 @@
 <?php
-// Hiển thị các nhân viên
-$products = [
-    [
-        "id" => 1,
-        "name" => "Người A",
-        "SDT" => 120,
-        "image" => "image/anh.png",
-        "description" => "TLU."
-    ],
-    [
-        "id" => 2,
-        "name" => "Người B",
-        "SDT" => 100,
-        "image" => "image/anh.png",
-         "description" => "TLU."
-    ],
-    [
-        "id" => 3,
-        "name" => "Người C",
-        "SDT" => 110,
-        "image" => "image/anh.png",
-        "description" => "TLU."
-    ],
-    [
-        "id" => 4,
-        "name" => "Người D ",
-        "SDT" => 180,
-        "image" => "image/anh.png",
-         "description" => "TLU."
-    ],
-    [
-        "id" => 5,
-        "name" => "Người E",
-        "SDT" => 250,
-        "image" => "image/anh5.png",
-         "description" => "TLU."
-    ],    [
-        "id" => 6,
-        "name" => "Người F",
-        "SDT" => 40,
-        "image" => "image/anh6.png",
-        "description" => "TLU."
-    ],    [
-        "id" => 7,
-        "name" => "Người G",
-        "SDT" => 90,
-        "image" => "image/anh.png",
-         "description" => "TLU."
-    ],    [
-        "id" => 8,
-        "name" => "Người H",
-        "SDT" => 95,
-        "image" => "image/anh.png",
-         "description" => "TLU."
-    ],    [
-        "id" => 9,
-        "name" => "Người I",
-        "SDT" => 130,
-        "image" => "image/anh.png",
-         "description" => "TLU."
-    ],    [
-        "id" => 10,
-        "name" => "Người J",
-        "SDT" => 650,
-        "image" => "image/anh.png",
-         "description" => "TLU."
-    ],    [
-        "id" => 11,
-        "name" => "Người K",
-        "SDT" => 140,
-        "image" => "image/anh.png",
-        "description" => "TLU."
-    ],    [
-        "id" => 12,
-        "name" => "Người L",
-        "SDT" => 150,
-        "image" => "image/anh.png",
-         "description" => "TLU."
-    ],    [
-        "id" => 13,
-        "name" => "Người M",
-        "SDT" => 170,
-        "image" => "image/anh.png",
-         "description" => "TLU."
-    ],
-
-];
-$itemsPerPage = 4;
+$itemsPerPage = 6;
 $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
-$currentPageItems =array_slice($products, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
-$totalPages = ceil(count($products) / $itemsPerPage);
+$currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
+$totalPages = ceil(count($employees) / $itemsPerPage);
+
+
+
 ?>
 
 <!doctype html>
@@ -100,19 +16,26 @@ $totalPages = ceil(count($products) / $itemsPerPage);
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../../public/assets/css/style.css">
+    <!-- <link rel="stylesheet" href="<?= ROOT . '/public/assets/css/style.css' ?>"> -->
+    <link rel="stylesheet" href="../public/assets/css/style.css">
     <title>Employees</title>
 </head>
 
 <body>
     <div class="product-list">
-        <?php foreach ($currentPageItems as $product): ?>
+        <?php foreach ($currentPageItems as $employee): ?>
         <div class="product">
-            <a href="detail.php?id=<?php echo $product['id']; ?>">
-                <img class="pic" src="<?php echo $product['image']; ?>">
-                <p>Tên Nhân Viên: <?php echo $product['name']; ?></p>
-                <p>SDT: <?php echo $product['SDT']; ?></p>
-                <p><?php echo $product['description']; ?></p>
+            <a style="text-decoration: none;" href="#" ?id=<?php echo $employee->getEmoloyeeId(); ?>">
+                <img class="pic" src="https://i.pinimg.com/236x/76/18/38/761838420398ec0b0b412b46b71f2ab2.jpg">
+                <p>Tên Nhân Viên:
+                    <?php echo $employee->getFullName(); ?>
+                </p>
+                <p>SDT:
+                    <?php echo $employee->getMobilePhone(); ?>
+                </p>
+                <p>Email:
+                    <?php echo $employee->getEmail(); ?>
+                </p>
             </a>
         </div>
         <?php endforeach; ?>
@@ -123,9 +46,13 @@ $totalPages = ceil(count($products) / $itemsPerPage);
         <?php endif; ?>
         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
         <?php if ($i == $currentPage): ?>
-        <span class="active"><?php echo $i; ?></span>
+        <span class="active">
+            <?php echo $i; ?>
+        </span>
         <?php else: ?>
-        <a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+        <a href="?page=<?php echo $i; ?>">
+            <?php echo $i; ?>
+        </a>
         <?php endif; ?>
         <?php endfor; ?>
         <?php if ($currentPage < $totalPages): ?>
