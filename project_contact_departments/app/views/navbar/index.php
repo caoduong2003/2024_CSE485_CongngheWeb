@@ -10,6 +10,8 @@
 
 <body>
 
+
+    <!-- navbar cua khach -->
     <nav class="navbar navbar-light bg-body-tertiary">
         <div class="container-fluid">
             <a href="#" class="navbar-brand">Danh bạ điện tử</a>
@@ -20,8 +22,8 @@
                     <i class="fas fa-search"></i>
                 </span>
             </form>
-            <a href="../users/index.php" class="navbar-text text-decoration-none">
-                <span class="ms-2">tên của bố ở đây</span>
+            <a href="<?= PATH . '/app/views/login/index.php' ?>" i class="navbar-text text-decoration-none">
+                <span class="ms-2">Đăng nhập</span>
                 <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" width="30" height="30"
                     class="rounded-circle" />
             </a>
@@ -30,6 +32,8 @@
 
         </div>
     </nav>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">

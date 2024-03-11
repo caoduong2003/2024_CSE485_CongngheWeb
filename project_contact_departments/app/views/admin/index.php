@@ -1,14 +1,14 @@
-<<<<<<< HEAD
 <?php
 
 $itemsPerPage = 4;
-$currentPage = isset($_GET['page'])? $_GET['page']:1;
+$currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 $totalPages = ceil(count($employees) / $itemsPerPage);
 $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,83 +17,95 @@ $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, 
 
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary border border-danger">
-                <div class="container-fluid">
-                    <a class="navbar-brand t" href="#">TLU.NET</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand t" href="#">Danh bạ điện tử</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="index.php">Trang chủ</a>
+                            <a class="nav-link " aria-current="page" href="index.php">Trang chủ</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link active" href="users.php">Danh bạ người dùng</a>
+                            <a class="nav-link active" href="users.php">Danh bạ người dùng</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
+                            <a class="nav-link" href="#"></a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
+                            <a class="nav-link" href="#"></a>
                         </li>
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
                     </ul>
-                    </div>
-                    <div> 
-                        
-                        <a href="#" class = "text-decoration-none text-success">Tài khoản:.....</a>  
-                        <a href="#" class = "btn btn-danger">Thoát</a>
-                    </div>
                 </div>
-            </nav>
+                <div>
+
+                    <a href="#" class="text-decoration-none text-success">Tài khoản:.....</a>
+                    <a href="#" class="btn btn-danger">Thoát</a>
+                </div>
+            </div>
+        </nav>
     </header>
     <main>
-        <div class = "container">
+        <div class="container">
             <div class="row">
-                <div class ="col">
-                    <h1 class = "text-center text-danger my-3">DANH BẠ NGƯỜI DÙNG</h1>
-                    <a href="#" class = "btn btn-primary">Thêm tài khoản</a>
+                <div class="col">
+                    <h1 class="text-center text-danger my-3">DANH BẠ NGƯỜI DÙNG</h1>
+                    <a href="#" class="btn btn-primary">Thêm tài khoản</a>
                     <table class="table border border-danger my-2">
                         <thead>
-                        <tr>
-                            <th>Stt</th>
-                            <th>Họ tên</th>
-                            <th>Số điện thoại</th>
-                            <th>Địa chỉ</th>
-                            <th>Đơn vị</th>
-                            <th scope="col" colspan="3" class="text-center">Thao tác</th>
-                        </tr>
+                            <tr>
+                                <th>Stt</th>
+                                <th>Họ tên</th>
+                                <th>Số điện thoại</th>
+                                <th>Địa chỉ</th>
+                                <th>Đơn vị</th>
+                                <th scope="col" colspan="3" class="text-center">Thao tác</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        <?php $i=0 ;?>
-                        <?php foreach($currentPageItems as $employe):?>
-                            <tr>
-                                <th scope="row"><?=++$i?> </th>
-                                <td><?= $employe -> getFullName();?></td>
-                                <td><?= $employe -> getMobilePhone();?></td>
-                                <<td><?= $employe -> getAddress();?></td>
-                                <<td><?= $employe -> getDepartmentId();?></td>
-                                <th scope="col">
-                                    <a href="" class = "btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                </th> 
-                                <th scope="col">
-                                    <a href="" class = "btn btn-danger"><i class="bi bi-pencil-fill"></i></a>
-                                </th>   
-                                <th scope="col">
-                                    <a href="" class = "btn btn-warning"><i class="bi bi-trash-fill"></i></a>
-                                </th>
-                                <!-- <th scope="col">
+                            <?php $i = 0; ?>
+                            <?php foreach ($currentPageItems as $employe): ?>
+                                <tr>
+                                    <th scope="row">
+                                        <?= ++$i ?>
+                                    </th>
+                                    <td>
+                                        <?= $employe->getFullName(); ?>
+                                    </td>
+                                    <td>
+                                        <?= $employe->getMobilePhone(); ?>
+                                    </td>
+                                    <<td>
+                                        <?= $employe->getAddress(); ?>
+                                        </td>
+                                        <<td>
+                                            <?= $employe->getDepartmentId(); ?>
+                                            </td>
+                                            <th scope="col">
+                                                <a href="" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
+                                            </th>
+                                            <th scope="col">
+                                                <a href="" class="btn btn-danger"><i class="bi bi-pencil-fill"></i></a>
+                                            </th>
+                                            <th scope="col">
+                                                <a href="" class="btn btn-warning"><i class="bi bi-trash-fill"></i></a>
+                                            </th>
+                                            <!-- <th scope="col">
                                     <a href="" class = "btn btn-info"><i class="bi bi-key-fill"></i></a>
                                 </th> -->
-                            </tr>
-                        <?php endforeach; ?>
-                        
+                                </tr>
+                            <?php endforeach; ?>
+
                     </table>
                     <nav aria-label="Page navigation example">
                         <ul class="pagination">
@@ -103,9 +115,13 @@ $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, 
                                 <?php endif; ?>
                                 <?php for ($i = 1; $i <= $totalPages; $i++): ?>
                                     <?php if ($i == $currentPage): ?>
-                                        <span class="active"><?php echo $i ; ?></span>
+                                        <span class="active">
+                                            <?php echo $i; ?>
+                                        </span>
                                     <?php else: ?>
-                                        <a class="text-decoration-none" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                                        <a class="text-decoration-none" href="?page=<?php echo $i; ?>">
+                                            <?php echo $i; ?>
+                                        </a>
                                     <?php endif; ?>
                                 <?php endfor; ?>
                                 <?php if ($currentPage < $totalPages): ?>
@@ -118,50 +134,7 @@ $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, 
             </div>
         </div>
     </main>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-=======
-// giao diện admin
-// nút thêm sửa xóa
-<!doctype html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Admin</title>
-</head>
-
-<body>
-    <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-        </li>
-    </ul>
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
->>>>>>> d9e45b5b153d77a1af42b1ebf96913eca44e6fa6
 </html>
