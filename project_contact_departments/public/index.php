@@ -10,8 +10,4 @@ $departmentController->getAllDepartment();
 // require_once ROOT.'/app/services/DepartmentService.php';
 
 $adminController = new AdminController();
-$adminController -> index();
-
-
-
- 
+$adminController->index();

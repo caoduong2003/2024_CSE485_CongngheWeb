@@ -16,35 +16,34 @@
 <body>
     <?php
     // hiển thị các khoa và giới thiệu'
-    
     include ROOT . '/app/views/navbar/index.php';
 
     // require_once ROOT.'app/controllers/DepartmentController.php';
     ?>
-    
+
     <div class="container">
-    <div class="row row-cols-1 row-cols-md-4 g-3 py-3 px-3 m-0">
-        <!-- động -->
-        <?php foreach ($departments as $department): ?>
-  
-        <div class="col">
-            <a href="#" class="text-decoration-none">
-                <div class="card text-center">
-                    <img src="https://adtimin.vn/wp-content/uploads/2017/09/Logo-1.jpg" class="card-img-top"
-                        alt="image" />
-                    <div class="card-body">
-                        <h5>
-                            <p class="card-title">
-                                <?= $department->getDepartmentName() ?>
-                            </p>
-                            <p class="card-text">
-                                <?= $department->getEmail() ?>
-                            </p>
-                        </h5>
-                    </div>
+        <div class="row row-cols-1 row-cols-md-4 g-3 py-3 px-3 m-0">
+            <!-- động -->
+            <?php foreach ($departments as $department): ?>
+
+                <div class="col">
+                    <a href="#" class="text-decoration-none">
+                        <div class="card text-center">
+                            <img src="https://adtimin.vn/wp-content/uploads/2017/09/Logo-1.jpg" class="card-img-top"
+                                alt="image" />
+                            <div class="card-body">
+                                <h5>
+                                    <p class="card-title">
+                                        <?= $department->getDepartmentName() ?>
+                                    </p>
+                                    <p class="card-text">
+                                        <?= $department->getEmail() ?>
+                                    </p>
+                                </h5>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </a>
-        </div>
 
             <?php endforeach; ?>
 
@@ -52,7 +51,7 @@
     </div>
     </div>
 
- 
+
 
     <footer>
         <?php
