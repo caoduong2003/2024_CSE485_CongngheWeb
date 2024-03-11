@@ -20,10 +20,14 @@
                     <h5 class="text-uppercase">Đại Học Thủy Lợi</h5>
 
                     <p>
-                        <a style="text-decoration: none; color:white; font-size: 14px;"
-                            href="https://www.tlu.edu.vn/">website:
+                        <a style="text-decoration: none; color:white" href="https://www.tlu.edu.vn/">website:
                             www.tlu.edu.vn</a>
                     </p>
+                    <p>Địa chỉ: 175 Tây Sơn, Đống Đa, Hà Nội</p>
+                    <p>Điện thoại: (024) 38522201 - Fax: (024) 35633351</p>
+                    <p>Email: phonghcth@tlu.edu.vn</p>
+
+
                 </div>
                 <!--Grid column-->
 
@@ -63,8 +67,7 @@
 
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            © 2024 Copyright TRƯỜNG ĐẠI HỌC THỦY LỢI
         </div>
         <!-- Copyright -->
     </footer>

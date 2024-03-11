@@ -88,3 +88,4 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO users (Username,`Password`,`role`,`EmployeeId`) VALUES 
  ( 'thanh', '123' , 'admin' ,1),
  ( 'hiep', 'abc' , 'user' ,3);
+

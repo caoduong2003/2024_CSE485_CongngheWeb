@@ -26,24 +26,24 @@
             <!-- động -->
             <?php foreach ($departments as $department): ?>
 
-                <div class="col">
-                    <a href="#" class="text-decoration-none">
-                        <div class="card text-center">
-                            <img src="https://adtimin.vn/wp-content/uploads/2017/09/Logo-1.jpg" class="card-img-top"
-                                alt="image" />
-                            <div class="card-body">
-                                <h5>
-                                    <p class="card-title">
-                                        <?= $department->getDepartmentName() ?>
-                                    </p>
-                                    <p class="card-text">
-                                        <?= $department->getEmail() ?>
-                                    </p>
-                                </h5>
-                            </div>
+            <div class="col">
+                <a href="#" class="text-decoration-none">
+                    <div class="card text-center">
+                        <img src="https://adtimin.vn/wp-content/uploads/2017/09/Logo-1.jpg" class="card-img-top"
+                            alt="image" />
+                        <div class="card-body">
+                            <h5>
+                                <p class="card-title">
+                                    <?= $department->getDepartmentName() ?>
+                                </p>
+                                <p class="card-text">
+                                    <?= $department->getEmail() ?>
+                                </p>
+                            </h5>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
+            </div>
 
             <?php endforeach; ?>
 
@@ -64,7 +64,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 </body>
 
 </html>

@@ -25,7 +25,8 @@ $totalPages = ceil(count($employees) / $itemsPerPage);
     <div class="product-list">
         <?php foreach ($currentPageItems as $employee): ?>
         <div class="product">
-            <a style="text-decoration: none;" href="#" ?id=<?php echo $employee->getEmoloyeeId(); ?>">
+            <a style="text-decoration: none;" href="<?= PATH . '/app/views/users/index.php' ?>"
+                ?id=<?php echo $employee->getEmoloyeeId(); ?>>
                 <div>
                     <img class="pic" src="https://i.pinimg.com/236x/76/18/38/761838420398ec0b0b412b46b71f2ab2.jpg">
                 </div>
