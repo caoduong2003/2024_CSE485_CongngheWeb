@@ -26,16 +26,20 @@ $totalPages = ceil(count($employees) / $itemsPerPage);
         <?php foreach ($currentPageItems as $employee): ?>
         <div class="product">
             <a style="text-decoration: none;" href="#" ?id=<?php echo $employee->getEmoloyeeId(); ?>">
-                <img class="pic" src="https://i.pinimg.com/236x/76/18/38/761838420398ec0b0b412b46b71f2ab2.jpg">
-                <p>Tên Nhân Viên:
-                    <?php echo $employee->getFullName(); ?>
-                </p>
-                <p>SDT:
-                    <?php echo $employee->getMobilePhone(); ?>
-                </p>
-                <p>Email:
-                    <?php echo $employee->getEmail(); ?>
-                </p>
+                <div>
+                    <img class="pic" src="https://i.pinimg.com/236x/76/18/38/761838420398ec0b0b412b46b71f2ab2.jpg">
+                </div>
+                <div>
+                    <p>Tên Nhân Viên:
+                        <?php echo $employee->getFullName(); ?>
+                    </p>
+                    <p>SDT:
+                        <?php echo $employee->getMobilePhone(); ?>
+                    </p>
+                    <p>Email:
+                        <?php echo $employee->getEmail(); ?>
+                    </p>
+                </div>
             </a>
         </div>
         <?php endforeach; ?>
