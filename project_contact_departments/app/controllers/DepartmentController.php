@@ -11,5 +11,9 @@ class DepartmentController
     include ROOT.'/app/views/home/index.php';
 
   }
+
+  public function getDepartmentById(){
+    
+  }
   
 }
