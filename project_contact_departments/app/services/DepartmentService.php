@@ -78,6 +78,23 @@ class DepartmentService {
 
   }
 
+  public function deleteDepartment($id){
+    $dbconnect = new DBconnection();
+    $conn = $dbconnect->getConn();
+
+    if($conn!=null){
+      try {
+        $sql = "DELTE FROM Departments WHERE DepartmentID = $id";
+        $conn->exec($sql);
+        return true;
+      } catch (PDOException $e) {
+        return false;
+      }
+
+    }
+
+  }
+
 
 
 

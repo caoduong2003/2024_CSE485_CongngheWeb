@@ -3,7 +3,7 @@ require_once ROOT.'/app/libs/DBconnection.php';
 require_once ROOT.'/app/models/Department.php';
 
 class EmployeeService {
-  public function getAllDepartment(){
+  public function getAllEmployee(){
     $dbconnect = new DBconnection();
     $conn = $dbconnect->getConn();
     // $conn = new PDO("mysql:host=localhost;dbname=project","root","hiep2003");
