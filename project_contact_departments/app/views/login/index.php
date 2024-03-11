@@ -19,7 +19,8 @@
                         <h3 stype="text-center">Login</h3>
                     </div>
                     <div class="card-body">
-                        <form action="#" method="post">
+                        <form action="<?= PATH.'/public/index.php'?>" method="post">
+                            <!-- <?= $_SERVER['PHP_SELF'] ?> -->
                             <div class="mb-4 row">
                                 <label for="username" class="col-sm-2 col-form-label">User</label>
                                 <div class="col-sm-10">
@@ -33,7 +34,7 @@
                                         placeholder="Password">
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" name="login" class="btn btn-primary">Login</button>
                         </form>
                     </div>
                 </div>
