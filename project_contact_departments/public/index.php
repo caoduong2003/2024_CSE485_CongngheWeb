@@ -4,7 +4,7 @@ require_once '../app/config/config.php';
 require_once ROOT . '/app/controllers/EmployeeController.php';
 require_once ROOT . '/app/controllers/DepartmentController.php';
 require_once ROOT . '/app/controllers/UserController.php';
-//require_once ROOT . '/app/services/AdminService.php';
+
 
 
 // require_once ROOT.'/app/services/DepartmentService.php';
@@ -18,7 +18,7 @@ $adminController->index();
 
 // $url = $_SERVER['REQUEST_URI'];
 // $method = $_SERVER['REQUEST_METHOD'];
-// $data = $_POST;
+// $i = 1;
 
 // if($url ==='/' && $method === 'GET'){
 //   $departmentController = new DepartmentController();
@@ -27,5 +27,3 @@ $adminController->index();
 // echo $method;
 // echo '<br>';
 // echo $url;
-// echo '<br>';
-// echo $data;
