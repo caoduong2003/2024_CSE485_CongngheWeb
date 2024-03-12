@@ -20,19 +20,36 @@ class UserService {
     
   }
 
+  public function getUserById($id){
+    $dbconnect = new DBconnection();
+    $conn = $dbconnect->getConn();
+    // $conn = new PDO("mysql:host=localhost;dbname=project","root","hiep2003");
+    if($conn!=null){
+      $sql = "SELECT * FROM users where EmployeeId = $id";
+      $stsm = $conn->query($sql);
+      $row = $stsm->fetch();
+        // $hash_pwd = password_hash($row['password'],PASSWORD_DEFAULT);
+      $user = new User($row['Username'], $row['Password'] ,$row['role'],['EmployeeId'] );
+        // $department = $row['DepartmentName'];
+       
+      
+      return $user;
+    }
+  }
+
   public function login($username,$password){
     $dbconnect = new DBconnection();
     $conn = $dbconnect->getConn();
 
     if($conn!=null){
 
-        $sql = "SELECT * FROM users WHERE Username = '$username' AND password = '$password'";
+        $sql = "SELECT * FROM users WHERE Username = '$username' AND Password = '$password'";
         $stsm = $conn->query($sql);
         $row = $stsm->fetch();
         if($row>0){
-          $user = new User($row['Username'], $row['password'],$row['role'],$row['EmployeeId'] );
+          $user = new User($row['Username'], $row['Password'],$row['role'],$row['EmployeeId'] );
           
-          return true;
+          return $user;
         }else{
           return false;
         }

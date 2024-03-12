@@ -3,46 +3,54 @@
 require_once ROOT . '/app/services/UserService.php';
 class UserController
 {
-//login
+
+  public function getUserById(){
+    session_start();
+    $id = $_SESSION['userId'];
+    $user = new UserService();
+    $user->getUserById($id);
+
+    include ROOT. '/app/views/users/index.php';
+  }
 
 
   public function login(){
     // if($_SERVER['REQUEST_METHOD'] == 'POST'){
+      session_start();
       if(isset($_POST['login'])){
-        // echo "login";
-       
         
-        // if(isset($_POST['user']){
-        //   $password = $_POST['pass'];
-        // }else {
-        //   echo "pass not found";
-        // }
-        
-        // if(!empty($username) && !empty($password)){
+          
           $username = $_POST['user'];
           $password = $_POST['pass'];
+          
           $login = new UserService();
           
+          
           $result = $login->login($username,$password);
-          if($result){
-            
-            // echo "success";
-           header('Location:'.PATH.'/app/views/home/index.php?yes=thanhcong');
+          if($result != null){
+            $_SESSION['username'] = $result->getUsername();
+            $role = $result->getRole();
+            $_SESSION['userId'] = $result->getEmployeeId();
+
+
+           if($role == 'user'){
+            header('Location:'.PATH.'/public/index.php?controller=department&action=index');
+           }else if($role == 'admin'){
+            header('Location:'.PATH.'/public/index.php?controller=employee&action=index');
+           }
           }else{
-            // echo "fail";
-            header('Location:'.PATH.'/app/views/login/index.php?error=wrong username or password');
+            header('Location:'.PATH.'/public/index.php?error=error');
           }
-        // }else{
-        //   echo "khong";
-        // }
-        
-      // }
       
     }
     include ROOT.'/app/views/login/index.php';
-   
 
+  }
 
- 
+  public function logout(){
+    
+    session_start();
+    session_destroy();
+    header('Location:'.PATH.'/public/index.php?controller=department&action=index');
   }
 }

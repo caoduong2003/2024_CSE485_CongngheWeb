@@ -7,8 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+<?php 
 
+?>
 <body>
+
 
 
     <!-- navbar cua khach -->
@@ -22,11 +25,22 @@
                     <i class="fas fa-search"></i>
                 </span>
             </form>
-            <a href="<?= PATH . '/app/views/login/index.php' ?>" i class="navbar-text text-decoration-none">
-                <span class="ms-2">Đăng nhập</span>
-                <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" width="30" height="30"
-                    class="rounded-circle" />
-            </a>
+            <?php if(isset($_SESSION['username'])):?>
+                <a href="<?= PATH . '/public/index.php?controller=user&action=logout'?>">logout</a>
+                <a href="<?= PATH . '/public/index.php?controller=user&action=getUserById'.'&id='.$_SESSION['userId'] ?>" i class="navbar-text text-decoration-none">
+                        <span class="ms-2"><?= $_SESSION['username'] ?></span>
+                       
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" width="30" height="30"
+                        class="rounded-circle" />
+                </a>
+            <?php else: ?>
+                <a href="<?= PATH . '/public/index.php?controller=user&action=login'?>" i class="navbar-text text-decoration-none">
+                        <span class="ms-2">Guest</span>
+                       
+                    <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" width="30" height="30"
+                        class="rounded-circle" />
+                </a>
+            <?php endif; ?>    
 
 
 

@@ -7,6 +7,5 @@ class EmployeeController
         $employeeService = new EmployeeService();
         $employees = $employeeService->getAllEmployee();
         include ROOT . '/app/views/admin/index.php';
-        include ROOT . '/app/views/employees/index.php';
     }
 }
