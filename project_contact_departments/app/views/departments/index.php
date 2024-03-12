@@ -47,7 +47,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="firstnameInput" class="form-label">ID đơn vị</label>
-                                                    <input type="text" class="form-control" id="fullname"placeholder="Nhập ID" value=""readonly="">
+                                                    <input type="text" class="form-control" id="fullname"placeholder="Nhập ID" value="">
                                                 </div>
                                             </div>                               
                                             <div class="col-lg-6">
@@ -59,39 +59,39 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3 pb-2">
                                                     <label for="exampleFormControlTextarea" class="form-label">Địa chỉ</label>
-                                                    <input type="text" class="form-control" value="" placeholder="Nhập địa chỉ " readonly="">
+                                                    <input type="text" class="form-control" value="" placeholder="Nhập địa chỉ " >
                                                 </div>
                                             </div>
                                             <!--end col-->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="emailInput" class="form-label">Thư điện tử</label>
-                                                    <input type="text" class="form-control" value="" placeholder="exam@gmail.com" readonly="">
+                                                    <input type="text" class="form-control" value="" placeholder="exam@gmail.com" >
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="emailInput" class="form-label">Số điện thoại</label>
-                                                    <input type="text" class="form-control" value="" readonly="" placeholder = "Nhập số điện thoại">
+                                                    <input type="text" class="form-control" value=""  placeholder = "Nhập số điện thoại">
                                                 </div>
                                             </div>
                                             <!--end col-->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="emailInput" class="form-label">Logo</label>
-                                                    <input type="email" class="form-control" placeholder ="Logo"value="" readonly="">
+                                                    <input type="email" class="form-control" placeholder ="Logo"value="" >
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="emailInput" class="form-label">Website</label>
-                                                    <input type="text" class="form-control" value="" placeholder ="Website" readonly="">
+                                                    <input type="text" class="form-control" value="" placeholder ="Website" >
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="emailInput" class="form-label">ID đơn vị con</label>
-                                                    <input type="text" class="form-control" value="" placeholder ="ParentDepartmentId" readonly="">
+                                                    <input type="text" class="form-control" value="" placeholder ="Đơn vị con" >
                                                 </div>
                                             </div>
                                             <!--end col-->
