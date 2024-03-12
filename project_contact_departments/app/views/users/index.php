@@ -1,9 +1,3 @@
-<?php
-// hiện thị trang cá nhân
-// có nút sửa
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,16 +44,6 @@
                                         <i class="far fa-user"></i>
                                         Thay đổi mật khẩu </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#logs" role="tab">
-                                        <i class="ri-history-line"></i>
-                                        Nhật ký hoạt động </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#dongtien" role="tab">
-                                        <i class="las la-money-check-alt"></i>
-                                        Biến động số dư </a>
-                                </li>
                             </ul>
                         </div>
                         <div class="card-body p-4">
@@ -69,80 +53,52 @@
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label for="firstnameInput" class="form-label">Họ và Tên</label>
-                                                    <input type="text" class="form-control" id="fullname"
-                                                        placeholder="Nhập họ và tên của bạn" value="1231241"
-                                                        readonly="">
+                                                    <label for="firstnameInput" class="form-label">ID</label>
+                                                    <input type="text" class="form-control" id="fullname"placeholder="Nhập ID" value=""readonly="">
                                                 </div>
-                                            </div>
-                                            <!--end col-->
+                                            </div>                               
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label for="phonenumberInput" class="form-label">Số điện
-                                                        thoại</label>
-                                                    <input type="text" class="form-control" id="phonenumberInput"
-                                                        placeholder="Nhập số điện thoại của bạn" value="">
+                                                    <label for="phonenumberInput" class="form-label">Họ tên</label>
+                                                    <input type="text" class="form-control" id="phonenumberInput" placeholder="Nhập họ tên" value="">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3 pb-2">
-                                                    <label for="exampleFormControlTextarea" class="form-label">Giới
-                                                        tính</label>
-                                                    <select class="form-control" data-choices=""
-                                                        data-choices-search-false="" id="gender">
-                                                        <option selected="" value="Male">Nam</option>
-                                                        <option value="Female">Nữ</option>
-                                                    </select>
+                                                    <label for="exampleFormControlTextarea" class="form-label">Địa chỉ</label>
+                                                    <input type="text" class="form-control" value="" placeholder="Nhập địa chỉ " readonly="">
                                                 </div>
                                             </div>
                                             <!--end col-->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label for="emailInput" class="form-label">IP</label>
-                                                    <input type="text" class="form-control" value="59.153.249.234"
-                                                        readonly="">
+                                                    <label for="emailInput" class="form-label">Thư điện tử</label>
+                                                    <input type="text" class="form-control" value="" placeholder="exam@gmail.com" readonly="">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label for="emailInput" class="form-label">Số điện thoại</label>
+                                                    <input type="text" class="form-control" value="" readonly="" placeholder = "Nhập số điện thoại">
                                                 </div>
                                             </div>
                                             <!--end col-->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label for="emailInput" class="form-label">Tên đăng nhập</label>
-                                                    <input type="text" class="form-control" value="duong28" readonly="">
-                                                </div>
-                                            </div>
-                                            <!--end col-->
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <label for="emailInput" class="form-label">Địa chỉ Email</label>
-                                                    <input type="email" class="form-control"
-                                                        value="phiduong280803@gmail.com" readonly="">
+                                                    <label for="emailInput" class="form-label">Logo</label>
+                                                    <input type="email" class="form-control" placeholder ="Logo"value="" readonly="">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label for="emailInput" class="form-label">Thời gian đăng ký</label>
-                                                    <input type="text" class="form-control" value="2023-09-14 00:46:12"
-                                                        readonly="">
+                                                    <label for="emailInput" class="form-label">Website</label>
+                                                    <input type="text" class="form-control" value="" placeholder ="Website" readonly="">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
-                                                    <label for="emailInput" class="form-label">Đăng nhập gần đây</label>
-                                                    <input type="text" class="form-control" value="2023-09-14 00:46:12"
-                                                        readonly="">
-                                                </div>
-                                            </div>
-
-
-
-
-                                            <!--end col-->
-                                            <div class="col-lg-12">
-                                                <div class="mb-3 pb-2">
-                                                    <label for="exampleFormControlTextarea" class="form-label">Thiết bị
-                                                        đăng nhập</label>
-                                                    <textarea class="form-control" readonly=""
-                                                        rows="1">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36</textarea>
+                                                    <label for="emailInput" class="form-label">ParentDepartmentId</label>
+                                                    <input type="text" class="form-control" value="" placeholder ="ParentDepartmentId" readonly="">
                                                 </div>
                                             </div>
                                             <!--end col-->
@@ -152,12 +108,12 @@
                                                         class="btn btn-primary">Cập Nhật</button>
                                                 </div>
                                             </div>
-                                            <!--end col-->
+                                           
                                         </div>
-                                        <!--end row-->
+                                        
                                     </form>
                                 </div>
-                                <!--end tab-pane-->
+                                
                                 <div class="tab-pane" id="changePassword" role="tabpanel">
                                     <form action="javascript:void(0);">
                                         <div class="row g-2">
@@ -190,9 +146,7 @@
                                             <!--end col-->
                                             <div class="col-lg-12">
                                                 <div class="mb-3">
-                                                    <a href="javascript:void(0);"
-                                                        class="link-primary text-decoration-underline">Quên mật khẩu
-                                                        ?</a>
+                                                    <a href="javascript:void(0);"class="link-primary text-decoration-underline" style = "text-decoration: none;">Quên mật khẩu?</a>
                                                 </div>
                                             </div>
                                             <!--end col-->
