@@ -20,7 +20,6 @@
                     </div>
                     <div class="card-body">
                         <form action="<?= PATH.'/public/index.php?controller=user&action=login'?>" method="post">
-                            <!-- <?= $_SERVER['PHP_SELF'] ?> -->
                             <div class="mb-4 row">
                                 <label for="username" class="col-sm-2 col-form-label">User</label>
                                 <div class="col-sm-10">
