@@ -18,6 +18,8 @@
     <!-- navbar cua khach -->
     <nav class="navbar navbar-light bg-body-tertiary">
         <div class="container-fluid">
+            <img style="width: 50px; height: 50px; padding: 3px"
+                src="https://upload.wikimedia.org/wikipedia/vi/b/bc/Logo-Thuy_Loi.png" alt="logo">
             <a href="#" class="navbar-brand">Danh bạ điện tử</a>
             <form class="d-flex input-group w-75">
                 <input type="search" class="form-control rounded" placeholder="Tìm kiếm" aria-label="Search"

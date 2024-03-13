@@ -10,7 +10,7 @@
 
 
 <body>
-    <footer class="bg-primary text-white text-center text-lg-start">
+    <footer class="bg-primary text-white text-center text-lg-start ">
         <!-- Grid container -->
         <div class="container p-4">
             <!--Grid row-->
@@ -74,7 +74,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
-        </script>
+    </script>
 </body>
 
 </html>
