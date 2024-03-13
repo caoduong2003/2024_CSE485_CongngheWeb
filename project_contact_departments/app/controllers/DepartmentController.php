@@ -1,20 +1,22 @@
 <?php
 
-require_once ROOT.'/app/services/DepartmentService.php';
+require_once ROOT . '/app/services/DepartmentService.php';
 class DepartmentController
 {
-  public function index(){
+  public function index()
+  {
     session_start();
 
     $departmentService = new DepartmentService();
-    $departments = $departmentService -> getAllDepartment();
+    $departments = $departmentService->getAllDepartment();
 
     include ROOT.'/app/views/home/index.php';
 
   }
 
-  public function getDepartmentById(){
-    
+  public function get()
+  {
+
   }
-  
+
 }

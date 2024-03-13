@@ -20,4 +20,23 @@ class EmployeeService
         }
 
     }
+
+    public function addEmployee($name,$address,$email,$mobilephone,$position,$avatar,$departmentid){
+
+        $dbconnect = new DBconnection();
+        $conn = $dbconnect->getConn();
+
+        if($conn!=null){
+            try {
+                $sql = "INSERT INTO employees (FullName,Address,Email,MobilePhone,Position,Avatar,DepartmentId) VALUES 
+                ('$name', '$address', '$email', '$mobilephone', '$position', '$avatar', '$departmentid')";
+                $conn->exec($sql);
+                return true;
+            } catch (PDOException $e) {
+                return false;
+            }
+        }
+
+
+    }
 }

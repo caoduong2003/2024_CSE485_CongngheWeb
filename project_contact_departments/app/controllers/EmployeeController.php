@@ -8,4 +8,16 @@ class EmployeeController
         $employees = $employeeService->getAllEmployee();
         include ROOT . '/app/views/admin/index.php';
     }
+
+    public function create(){
+        
+        // if()
+
+
+        // $create = new EmployeeService();
+        // $employee = $create->addEmployee();
+        // if($employee){
+
+        // }
+    }
 }
