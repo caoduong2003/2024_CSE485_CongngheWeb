@@ -24,29 +24,29 @@ require_once ROOT . '/app/controllers/UserController.php';
 
 $controller = isset($_GET['controller']) ? $_GET['controller'] : 'department';
 
-if(isset($_GET['action'])){
+if (isset($_GET['action'])) {
   $action = $_GET['action'];
-}else{
-  $action='index';
+} else {
+  $action = 'index';
 }
 
 
 
-switch($controller){
+switch ($controller) {
   case 'department':
     $controller = ucfirst($controller);
-    $controller = $controller.'Controller';
-    $path = ROOT.'/app/controllers/'.$controller.'.php';
-    if(!file_exists($path)){
+    $controller = $controller . 'Controller';
+    $path = ROOT . '/app/controllers/' . $controller . '.php';
+    if (!file_exists($path)) {
       die('tep tin khong ton tai');
       exit(1);
     }
-    
-  
+
+
     $myController = new $controller();
-    switch($action){
-      case 'index':     
-        if(!method_exists($controller,$action)){
+    switch ($action) {
+      case 'index':
+        if (!method_exists($controller, $action)) {
           die('phuong thuc ko ton tai');
           exit(1);
         }
@@ -57,89 +57,62 @@ switch($controller){
 
 
 
-    case 'user':
-      $controller = ucfirst($controller);
-      $controller = $controller.'Controller';
-      $path = ROOT.'/app/controllers/'.$controller.'.php';
-      if(!file_exists($path)){
-        die('tep tin khong ton tai');
-        exit(1);
-      }
-    
-      $myController = new $controller();
-      switch($action){
-        case 'login':     
-          if(!method_exists($controller,$action)){
-            die('phuong thuc ko ton tai');
-            exit(1);
-          }
-          $myController->$action();
-          break;
-        case 'logout':     
-          if(!method_exists($controller,$action)){
-            die('phuong thuc ko ton tai');
-            exit(1);
-          }
-          $myController->$action();
-          break;  
-        case 'getUserById':     
-          if(!method_exists($controller,$action)){
-            die('phuong thuc ko ton tai');
-            exit(1);
-          }
-          $myController->$action();
-          break;
-          
-      }
-      break;
-
-    case 'employee':
+  case 'user':
     $controller = ucfirst($controller);
-    $controller = $controller.'Controller';
-    $path = ROOT.'/app/controllers/'.$controller.'.php';
-    if(!file_exists($path)){
+    $controller = $controller . 'Controller';
+    $path = ROOT . '/app/controllers/' . $controller . '.php';
+    if (!file_exists($path)) {
       die('tep tin khong ton tai');
       exit(1);
     }
-  
+
     $myController = new $controller();
-    switch($action){
-      case 'index':     
-        if(!method_exists($controller,$action)){
+    switch ($action) {
+      case 'login':
+        if (!method_exists($controller, $action)) {
+          die('phuong thuc ko ton tai');
+          exit(1);
+        }
+        $myController->$action();
+        break;
+      case 'logout':
+        if (!method_exists($controller, $action)) {
+          die('phuong thuc ko ton tai');
+          exit(1);
+        }
+        $myController->$action();
+        break;
+      case 'getUserById':
+        if (!method_exists($controller, $action)) {
+          die('phuong thuc ko ton tai');
+          exit(1);
+        }
+        $myController->$action();
+        break;
+
+    }
+    break;
+
+  case 'employee':
+    $controller = ucfirst($controller);
+    $controller = $controller . 'Controller';
+    $path = ROOT . '/app/controllers/' . $controller . '.php';
+    if (!file_exists($path)) {
+      die('tep tin khong ton tai');
+      exit(1);
+    }
+
+    $myController = new $controller();
+    switch ($action) {
+      case 'index':
+        if (!method_exists($controller, $action)) {
           die('phuong thuc ko ton tai');
           exit(1);
         }
         $myController->$action();
         break;
     }
-    break;  
+    break;
 
 
 }
-  
-  
-
-
-
-
- 
-
- 
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
