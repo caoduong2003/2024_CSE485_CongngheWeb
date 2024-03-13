@@ -33,16 +33,16 @@ class UserController
             $_SESSION['userId'] = $result->getEmployeeId();
 
 
-           if($role == 'user'){
-            header('Location:'.PATH.'/public/index.php?controller=department&action=index');
-           }else if($role == 'admin'){
-            header('Location:'.PATH.'/public/index.php?controller=employee&action=index');
-           }
+            if($role == 'user'){
+              header('Location:'.PATH.'/public/index.php?controller=department&action=index');
+            }else if($role == 'admin'){
+              header('Location:'.PATH.'/public/index.php?controller=employee&action=index');
+            }
           }else{
             header('Location:'.PATH.'/public/index.php?error=error');
           }
       
-    }
+      }
     include ROOT.'/app/views/login/index.php';
 
   }
