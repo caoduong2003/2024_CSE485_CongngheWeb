@@ -3,7 +3,7 @@
 
 class Employee 
 {
-  private $emoloyeeId;
+  private $employeeId;
   private $fullName;
   private $address;
   private $email;
@@ -12,9 +12,9 @@ class Employee
   private $avatar;
   private $departmentId;
 
-  public function __construct($emoloyeeId, $fullName, $address, $email, $mobilePhone, $position, $avatar, $departmentId)
+  public function __construct($employeeId, $fullName, $address, $email, $mobilePhone, $position, $avatar, $departmentId)
   {
-    $this->emoloyeeId = $emoloyeeId;
+    $this->employeeId = $employeeId;
     $this->fullName = $fullName;
     $this->address = $address;
     $this->email = $email;
@@ -26,12 +26,12 @@ class Employee
   }
 
   
-  public function getEmoloyeeId(){
-    return $this->emoloyeeId;
+  public function getEmployeeId(){
+    return $this->employeeId;
   }
 
-  public function setEmoloyeeId($emoloyeeId){
-    $this->emoloyeeId = $emoloyeeId;
+  public function setEmployeeId($employeeId){
+    $this->employeeId = $employeeId;
   }
 
   public function getFullName(){

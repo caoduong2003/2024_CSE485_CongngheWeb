@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Trang cá nhân</title>
+    <title>Chỉnh sửa thông tin</title>
 </head>
 
 <body>
@@ -18,12 +18,12 @@
                         <div class="card-body p-4">
                             <div class="text-center">
                                 <div class="profile-user position-relative d-inline-block mx-auto  mb-4">
-                                    <img src="<?= $employee->getAvatar();?>"
+                                    <img src="https://tanglikegiare.club/assets/img/icon-avatar.png"
                                         class="rounded-circle avatar-xl img-thumbnail user-profile-image w-50 h-50"
                                         alt="user-profile-image">
                                 </div>
-                                <h5 class="fs-16 mb-1"><?= $employee->getFullName() ?></h5>
-                                <h5 class="fs-16 "><?= $employee->getMobilePhone() ?></h5>
+                                <h5 class="fs-16 mb-1"><?= $employee->getFullName(); ?></h5>
+                                <h5 class="fs-16 "><?= $employee->getEmployeeId()?></h5>
 
                             </div>
                         </div>
@@ -49,39 +49,44 @@
                         <div class="card-body p-4">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="personalDetails" role="tabpanel">
-                                    <form action="<?= PATH.'/public/index.php?controller=employee&action=create'?>"  method="post">
+                                    <form action="<?= PATH.'/public/index.php?controller=employee&action=update&id='.$employee->getEmployeeId()?>"  method="post">
                                         <div class="row">
-                                                             
+                                            <div class="col-lg-6">
+                                                <div class="mb-3">
+                                                    <label for="firstnameInput" class="form-label">ID</label>
+                                                    <input type="text" class="form-control" name="id"placeholder="Nhập ID" value="">
+                                                </div>
+                                            </div>                               
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="phonenumberInput" class="form-label">Họ tên</label>
-                                                    <input type="text" class="form-control" name="name" placeholder="Nhập họ tên" value="<?= $employee->getFullName() ?>">
+                                                    <input type="text" class="form-control" name="name" placeholder="Nhập họ tên" value="">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3 pb-2">
                                                     <label for="exampleFormControlTextarea" class="form-label">Địa chỉ</label>
-                                                    <input type="text" class="form-control" name="address" value="<?= $employee->getAddress() ?>" placeholder="Nhập địa chỉ " >
+                                                    <input type="text" class="form-control" name="address" value="" placeholder="Nhập địa chỉ " >
                                                 </div>
                                             </div>
                                             <!--end col-->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="emailInput" class="form-label">Thư điện tử</label>
-                                                    <input type="text" class="form-control" name="email" value="<?= $employee->getEmail() ?>" placeholder="exam@gmail.com" >
+                                                    <input type="text" class="form-control" name="email" value="" placeholder="exam@gmail.com" >
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="emailInput" class="form-label">Số điện thoại</label>
-                                                    <input type="text" class="form-control" name="phone" value="<?= $employee->getMobilePhone() ?>"  placeholder = "Nhập số điện thoại">
+                                                    <input type="text" class="form-control" name="phone" value=""  placeholder = "Nhập số điện thoại">
                                                 </div>
                                             </div>
                                             <!--end col-->
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <label for="emailInput" class="form-label">Công việc</label>
-                                                    <input type="text" class="form-control" name="position" value="<?= $employee->getPosition() ?>" placeholder ="Công việc"value="" >
+                                                    <input type="text" class="form-control" name="position" placeholder ="Công việc"value="" >
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
@@ -100,7 +105,7 @@
                                             <div class="col-lg-12">
                                                 <div class="hstack gap-2 justify-content-end">
                                                     <button type="submit" id="btnSaveProfile"
-                                                        class="btn btn-primary" name="update">Cập Nhật</button>
+                                                        class="btn btn-primary" name="update">Cập nhật</button>
                                                 </div>
                                             </div>
                                            

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $itemsPerPage = 4;
 $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 $totalPages = ceil(count($employees) / $itemsPerPage);
@@ -60,7 +60,7 @@ $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, 
             <div class="row">
                 <div class="col">
                     <h1 class="text-center text-danger my-3">DANH BẠ NGƯỜI DÙNG</h1>
-                    <a href="#" class="btn btn-primary">Thêm tài khoản</a>
+                    <a href="<?= PATH . '/public/index.php?controller=employee&action=create'?>" class="btn btn-primary">Thêm tài khoản</a>
                     <table class="table border border-danger my-2">
                         <thead>
                             <tr>
@@ -85,17 +85,17 @@ $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, 
                                     <td>
                                         <?= $employe->getMobilePhone(); ?>
                                     </td>
-                                    <<td>
+                                    <td>
                                         <?= $employe->getAddress(); ?>
-                                        </td>
-                                        <<td>
+                                    </td>
+                                    <td>
                                             <?= $employe->getDepartmentId(); ?>
-                                            </td>
+                                    </td>
                                             <th scope="col">
                                                 <a href="" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
                                             </th>
                                             <th scope="col">
-                                                <a href="" class="btn btn-danger"><i class="bi bi-pencil-fill"></i></a>
+                                                <a href="<?=PATH.'/public/index.php?controller=employee&action=update&id='.$employe->getEmployeeId() ?>" class="btn btn-danger"><i class="bi bi-pencil-fill"></i></a>
                                             </th>
                                             <th scope="col">
                                                 <a href="" class="btn btn-warning"><i class="bi bi-trash-fill"></i></a>

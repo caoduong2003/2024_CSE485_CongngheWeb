@@ -1,15 +1,25 @@
 <?php
 
 require_once ROOT . '/app/services/UserService.php';
+require_once ROOT . '/app/services/EmployeeService.php';
 class UserController
 {
 
-  public function getUserById()
+  public function profile()
   {
     session_start();
-    $id = $_SESSION['userId'];
-    $user = new UserService();
-    $user->getUserById($id);
+
+    $id = $_GET['id'];
+    
+    // $user = new UserService();
+    // $user->getUserById($id);
+    echo $id;
+    
+    
+    $employees = new EmployeeService();
+    $employee = $employees ->getEmployeeById($id);
+
+
 
     include ROOT . '/app/views/users/index.php';
   }

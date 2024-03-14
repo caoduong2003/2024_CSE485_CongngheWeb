@@ -82,7 +82,7 @@ switch ($controller) {
         }
         $myController->$action();
         break;
-      case 'getUserById':
+      case 'profile':
         if (!method_exists($controller, $action)) {
           die('phuong thuc ko ton tai');
           exit(1);
@@ -111,6 +111,21 @@ switch ($controller) {
         }
         $myController->$action();
         break;
+
+      case 'create':
+        if (!method_exists($controller, $action)) {
+          die('phuong thuc ko ton tai');
+          exit(1);
+        }
+        $myController->$action();
+        break;
+      case 'update':
+        if (!method_exists($controller, $action)) {
+          die('phuong thuc ko ton tai');
+          exit(1);
+        }
+        $myController->$action();
+        break;      
     }
     break;
 
