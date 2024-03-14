@@ -112,6 +112,14 @@ switch ($controller) {
         $myController->$action();
         break;
 
+      case 'getbyid':
+        if (!method_exists($controller, $action)) {
+          die('phuong thuc ko ton tai');
+          exit(1);
+        }
+        $myController->$action();
+        break;  
+
       case 'create':
         if (!method_exists($controller, $action)) {
           die('phuong thuc ko ton tai');
@@ -125,7 +133,14 @@ switch ($controller) {
           exit(1);
         }
         $myController->$action();
-        break;      
+        break; 
+        case 'delete':
+          if (!method_exists($controller, $action)) {
+            die('phuong thuc ko ton tai');
+            exit(1);
+          }
+          $myController->$action();
+          break;           
     }
     break;
 

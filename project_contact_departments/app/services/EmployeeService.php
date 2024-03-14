@@ -37,6 +37,22 @@ class EmployeeService
           return $employee;
         }
       }
+      public function getEmployeeByIdDp($id){
+        $dbconnect = new DBconnection();
+        $conn = $dbconnect->getConn();
+        // $conn = new PDO("mysql:host=localhost;dbname=project","root","hiep2003");
+        if($conn!=null){
+          $sql = "SELECT * FROM employees where DepartmentID = $id";
+          $stsm = $conn->query($sql);
+            // $hash_pwd = password_hash($row['password'],PASSWORD_DEFAULT);
+            $employees = [];
+            while ($row = $stsm->fetch()) {
+                $employee = new Employee($row['EmployeeId'], $row['FullName'], $row['Address'], $row['Email'], $row['MobilePhone'], $row['Position'], $row['Avatar'], $row['DepartmentId']);
+                $employees[] = $employee;
+            }
+            return $employees;
+        }
+      }  
 
     public function addEmployee($name,$address,$email,$mobilephone,$position,$avatar,$departmentid){
 
@@ -66,6 +82,25 @@ class EmployeeService
             try {
                 $sql = "UPDATE employees SET Fullname = '$name', Address = '$address',Email = '$email',
                 Mobilephone = '$mobilephone',Position = '$position',Avatar = '$avatar',DepartmentId = '$departmentid' where EmployeeId = $id";
+                $conn->exec($sql);
+                return true;
+            } catch (PDOException $e) {
+                echo "Error: ".$e->getMessage();
+                return false;
+            }
+        }
+
+
+    }
+
+    public function deleteEmployee($id){
+
+        $dbconnect = new DBconnection();
+        $conn = $dbconnect->getConn();
+
+        if($conn!=null){
+            try {
+                $sql = "DELETE FROM employees where EmployeeId = $id";
                 $conn->exec($sql);
                 return true;
             } catch (PDOException $e) {

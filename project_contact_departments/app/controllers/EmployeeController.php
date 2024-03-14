@@ -11,7 +11,19 @@ class EmployeeController
         include ROOT . '/app/views/admin/index.php';
     }
 
+    public function getbyid()
+    {
+        $id = $_GET['id'];
+        $employeeService = new EmployeeService();
+        $employees = $employeeService->getEmployeeByIdDp($id);
+        // echo '<pre>';
+        // echo print_r($employees);
+        // echo '</pre>';
+        include ROOT . '/app/views/employees/index.php';
+    }
     public function create(){
+
+        
         
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             if(isset($_POST['create'])){
@@ -23,11 +35,9 @@ class EmployeeController
                 $avatar = $_POST['avatar'];
                 $departmentId = $_POST['departmentId'];
 
-                $id = $_GET['id'];
     
 
                 $employees = new EmployeeService();
-                $employee = $employees ->getEmployeeById($id);
 
                 $result = $employees->addEmployee($name,$address,$email,$phone,$position,$avatar,$departmentId);
                 if($result){
@@ -87,9 +97,19 @@ class EmployeeController
             
 
         include ROOT. '/app/views/admin/update.php';
+      
+    }
 
+    public function delete(){
 
-       
+        $employee = new EmployeeService();
+        $id = $_GET['id'];
+        $result = $employee->deleteEmployee($id);
+        if($result ){
+            header('Location:'. PATH. '/public/index.php?controller=employee&action=index&msg=Xóa thành công');
+        }else{
+            header('Location:'. PATH. '/public/index.php?controller=employee&action=index&error=Xóa thất bại&id='.$id);
+        }
     }
 
     

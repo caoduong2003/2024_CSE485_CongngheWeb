@@ -9,7 +9,8 @@ class DepartmentService {
     $conn = $dbconnect->getConn();
     // $conn = new PDO("mysql:host=localhost;dbname=project","root","hiep2003");
     if($conn!=null){
-      $sql = "SELECT * FROM departments WHERE departments.ParentDepartmentId IS null";
+      // $sql = "SELECT * FROM departments WHERE departments.ParentDepartmentId IS null";
+      $sql = "SELECT * FROM departments ";
       $stsm = $conn->query($sql);
       $departments = [];
       while($row = $stsm->fetch()){

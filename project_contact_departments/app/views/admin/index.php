@@ -6,6 +6,18 @@ $totalPages = ceil(count($employees) / $itemsPerPage);
 $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
 ?>
 
+<script>
+    const doDelete =()=>{
+        const message = confirm("Bạn có muốn xóa không?");
+        if(message){
+            window.location.href='index.'
+        }else{
+            $check = false;
+        }
+    }
+
+    
+</script>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,6 +67,16 @@ $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, 
             </div>
         </nav>
     </header>
+    <?php if(isset($_GET['error'])):?>
+        <div class="alert alert-danger" role="alert">
+            <?php echo $_GET['error'];?>
+        </div>
+    <?php endif;?>
+    <?php if(isset($_GET['msg'])):?>
+        <div class="alert alert-success" role="alert">
+            <?php echo $_GET['msg'];?>
+        </div>
+    <?php endif;?>
     <main>
         <div class="container">
             <div class="row">
@@ -98,7 +120,7 @@ $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, 
                                                 <a href="<?=PATH.'/public/index.php?controller=employee&action=update&id='.$employe->getEmployeeId() ?>" class="btn btn-danger"><i class="bi bi-pencil-fill"></i></a>
                                             </th>
                                             <th scope="col">
-                                                <a href="" class="btn btn-warning"><i class="bi bi-trash-fill"></i></a>
+                                                <a onclick="doDelete()" href="<?=PATH.'/public/index.php?controller=employee&action=delete&'.$employe->getEmployeeId() ?>" class="btn btn-warning"><i class="bi bi-trash-fill"></i></a>
                                             </th>
                                             <!-- <th scope="col">
                                     <a href="" class = "btn btn-info"><i class="bi bi-key-fill"></i></a>
@@ -119,7 +141,7 @@ $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, 
                                             <?php echo $i; ?>
                                         </span>
                                     <?php else: ?>
-                                        <a class="text-decoration-none" href="?page=<?php echo $i; ?>">
+                                        <a class="text-decoration-none" href="<?= PATH.'/public/index.php?controller=employee&action=index&page='.$i; ?>">
                                             <?php echo $i; ?>
                                         </a>
                                     <?php endif; ?>

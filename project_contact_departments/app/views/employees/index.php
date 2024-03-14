@@ -4,6 +4,9 @@ $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
 $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
 $totalPages = ceil(count($employees) / $itemsPerPage);
 
+// echo '<pre>';
+// echo print_r($employees);
+//  echo '</pre>';
 
 
 ?>
@@ -24,9 +27,10 @@ $totalPages = ceil(count($employees) / $itemsPerPage);
 <body>
     <div class="product-list">
         <?php foreach ($currentPageItems as $employee): ?>
+           
         <div class="product">
             <a style="text-decoration: none;" href="<?= PATH . '/app/views/users/index.php' ?>"
-                ?id=<?php echo $employee->getEmoloyeeId(); ?>>
+                ?id=<?php echo $employee->getEmployeeId(); ?>>
                 <div>
                     <img class="pic" src="https://i.pinimg.com/236x/76/18/38/761838420398ec0b0b412b46b71f2ab2.jpg">
                 </div>

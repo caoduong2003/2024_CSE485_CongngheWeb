@@ -35,6 +35,8 @@
                         <div class="card-header">
                             <ul class="nav nav-tabs-custom rounded card-header-tabs border-bottom-0" role="tablist">
                                 <li class="nav-item">
+
+                                    
                                     <h4 class="text-center">THÔNG TIN ĐƠN VỊ </h4>
                                 </li>
                             </ul>
