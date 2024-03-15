@@ -27,7 +27,7 @@
             <?php foreach ($departments as $department): ?>
 
             <div class="col">
-                <a href="#" class="text-decoration-none">
+                <a href="<?= PATH.'/public/index.php?controller=employee&action=getbyid&id='.$department->getDepartmentId()?>" class="text-decoration-none">
                     <div class="card text-center">
                         <img src="https://adtimin.vn/wp-content/uploads/2017/09/Logo-1.jpg" class="card-img-top"
                             alt="image" />

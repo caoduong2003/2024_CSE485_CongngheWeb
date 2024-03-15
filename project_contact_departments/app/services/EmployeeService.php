@@ -37,6 +37,22 @@ class EmployeeService
           return $employee;
         }
       }
+
+      public function search($name){
+        $dbconnect = new DBconnection();
+        $conn = $dbconnect->getConn();
+        if ($conn != null) {
+            $sql = "SELECT * FROM employees
+            WHERE FullName LIKE '%$name%' ";
+            $stmt = $conn->query($sql);
+            $employees = [];
+            while ($row = $stmt->fetch()) {
+                $employee = new Employee($row['EmployeeId'], $row['FullName'], $row['Address'], $row['Email'], $row['MobilePhone'], $row['Position'], $row['Avatar'], $row['DepartmentId']);
+                $employees[] = $employee;
+            }
+            return $employees;
+        }
+      }
       public function getEmployeeByIdDp($id){
         $dbconnect = new DBconnection();
         $conn = $dbconnect->getConn();

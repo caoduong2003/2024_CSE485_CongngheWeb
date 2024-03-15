@@ -13,6 +13,7 @@ class EmployeeController
 
     public function getbyid()
     {
+        session_start();
         $id = $_GET['id'];
         $employeeService = new EmployeeService();
         $employees = $employeeService->getEmployeeByIdDp($id);
@@ -21,6 +22,17 @@ class EmployeeController
         // echo '</pre>';
         include ROOT . '/app/views/employees/index.php';
     }
+
+    public function detail()
+    {
+        $id = $_GET['id'];
+        $employees = new EmployeeService();
+        $employee = $employees ->getEmployeeById($id);        // echo '<pre>';
+        // echo print_r($employees);
+        // echo '</pre>';
+        include ROOT . '/app/views/employees/detail.php';
+    }
+    
     public function create(){
 
         
@@ -58,6 +70,21 @@ class EmployeeController
         // if($employee){
 
         // }
+    }
+
+    public function search(){
+        if(isset($_POST['search'])){
+            $name = $_POST['name'];
+            $employeeService = new EmployeeService();
+            $employees = $employeeService->search($name);
+            // echo '<pre>';
+            // echo print_r($employees);
+            // echo '</pre>';
+            
+        }
+        include ROOT. '/app/views/employees/search.php';
+
+        
     }
 
     public function update(){

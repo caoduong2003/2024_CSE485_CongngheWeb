@@ -11,7 +11,7 @@ class UserService {
       $users = [];
       while($row = $stsm->fetch()){
         // $hash_pwd = password_hash($row['password'],PASSWORD_DEFAULT);
-        $user = new User($row['Username'], $row['password'] ,$row['role'],['EmployeeId'] );
+        $user = new User($row['Username'], $row['Password'] ,$row['role'],['EmployeeId'] );
         // $department = $row['DepartmentName'];
         $users[] = $user;
       }
@@ -37,14 +37,15 @@ class UserService {
     }
   }
 
-  public function login($username,$password){
+  public function login($username){
     $dbconnect = new DBconnection();
     $conn = $dbconnect->getConn();
 
     if($conn!=null){
 
-        $sql = "SELECT * FROM users WHERE Username = '$username' AND Password = '$password'";
+        $sql = "SELECT * FROM users WHERE Username = '$username' ";
         $stsm = $conn->query($sql);
+        // $password=password_verify($password,PASSWORD_DEFAULT);
         $row = $stsm->fetch();
         if($row>0){
           $user = new User($row['Username'], $row['Password'],$row['role'],$row['EmployeeId'] );

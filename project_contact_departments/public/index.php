@@ -111,6 +111,20 @@ switch ($controller) {
         }
         $myController->$action();
         break;
+      case 'detail':
+        if (!method_exists($controller, $action)) {
+          die('phuong thuc ko ton tai');
+          exit(1);
+        }
+        $myController->$action();
+        break; 
+      case 'search':
+        if (!method_exists($controller, $action)) {
+          die('phuong thuc ko ton tai');
+          exit(1);
+        }
+        $myController->$action();
+        break;    
 
       case 'getbyid':
         if (!method_exists($controller, $action)) {

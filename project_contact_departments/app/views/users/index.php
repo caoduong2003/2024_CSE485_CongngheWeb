@@ -49,7 +49,7 @@
                         <div class="card-body p-4">
                             <div class="tab-content">
                                 <div class="tab-pane active" id="personalDetails" role="tabpanel">
-                                    <form action="<?= PATH.'/public/index.php?controller=employee&action=create'?>"  method="post">
+                                    <form action="<?= PATH.'/public/index.php?controller=user&action=profile&id='.$_GET['id']?>"  method="post">
                                         <div class="row">
                                                              
                                             <div class="col-lg-6">
@@ -101,6 +101,7 @@
                                                 <div class="hstack gap-2 justify-content-end">
                                                     <button type="submit" id="btnSaveProfile"
                                                         class="btn btn-primary" name="update">Cập Nhật</button>
+                                                        <a href="<?= PATH.'/public/index.php?controller=department&action=index'?>" class="btn btn-danger">Thoát</a>
                                                 </div>
                                             </div>
                                            
