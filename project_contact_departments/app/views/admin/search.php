@@ -53,7 +53,7 @@ const doDelete = () => {
               <a class="nav-link" href="#"></a>
             </li>
             <form class="d-flex " role="search" action="<?= PATH.'/public/index.php?controller=employee&action=adminSearch' ?>" method="post">
-              <input class="form-control me-2" name="name" type="search" placeholder="Tìm kiếm" aria-label="Search" >
+              <input class="form-control me-2" name="name" type="search" placeholder="Tìm kiếm" aria-label="Search">
               <button class="btn btn-outline-success" name="search" type="submit">search</button>
             </form>
           </ul>

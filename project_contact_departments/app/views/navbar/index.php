@@ -31,8 +31,9 @@
             </form>
             <?php if (isset($_SESSION['username']) && $_SESSION['role'] == 'user' ): ?>
                 <a class="btn btn-danger" href="<?= PATH . '/public/index.php?controller=user&action=logout' ?>">logout</a>
-                <a href="<?= PATH . '/public/index.php?controller=user&action=profile' . '&id=' . $_SESSION['userId'] ?>"
-                    i class="navbar-text text-decoration-none">
+                
+             
+                <a href="<?= PATH.'/public/index.php?controller=user&action=profile&id='.$_SESSION['id'] ?>" i class="navbar-text text-decoration-none">
                     <span class="ms-2">
                         <?= $_SESSION['username'] ?>
                     </span>
@@ -44,7 +45,7 @@
             <?php elseif(isset($_SESSION['username']) && $_SESSION['role'] == 'admin' ):?>
                 <a class="btn btn-success" href="<?= PATH . '/public/index.php?controller=employee&action=index'?>">Admin</a>
                 <a class="btn btn-danger" href="<?= PATH . '/public/index.php?controller=user&action=logout' ?>">logout</a>
-                <a href="<?= PATH . '/public/index.php?controller=user&action=profile' . '&id=' . $_SESSION['userId'] ?>"
+                <a href="<?= PATH . '/public/index.php?controller=user&action=profile' . '&id=' . $_SESSION['id'] ?>"
                     i class="navbar-text text-decoration-none">
                     <span class="ms-2">
                         <?= $_SESSION['username'] ?>

@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Routing\Route;
 
 require_once '../app/config/config.php';
 
@@ -111,6 +110,13 @@ switch ($controller) {
         }
         $myController->$action();
         break;
+      case 'adminSearch':
+        if (!method_exists($controller, $action)) {
+          die('phuong thuc ko ton tai');
+          exit(1);
+        }
+        $myController->$action();
+        break;  
       case 'detail':
         if (!method_exists($controller, $action)) {
           die('phuong thuc ko ton tai');
@@ -160,3 +166,5 @@ switch ($controller) {
 
 
 }
+
+?>

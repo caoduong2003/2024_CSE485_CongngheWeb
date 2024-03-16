@@ -104,8 +104,11 @@
                       </div>
                       <div class="col-lg-6">
                         <div class="mb-3">
-                          <label for="emailInput" class="form-label">ID đơn vị</label>
-                          <input type="text" class="form-control" name="departmentId" value="" placeholder="ID đơn vị">
+                          <select id="cars" name="department">
+                            <?php foreach ($departments as $department): ?>
+                              <option value="<?=$department->getDepartmentId()?>" ><?=$department->getDepartmentName()?></option>
+                            <?php endforeach; ?>  
+                          </select>
                         </div>
                       </div>
                       <!--end col-->

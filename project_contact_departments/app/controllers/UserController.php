@@ -7,7 +7,7 @@ class UserController
 
   public function profile()
   {
-    session_start();
+            session_start();
 
     
             $id = $_GET['id'];
@@ -53,10 +53,8 @@ class UserController
 
   public function login()
   {
-    // if($_SERVER['REQUEST_METHOD'] == 'POST'){
     session_start();
     if (isset($_POST['login'])) {
-
 
       $username = $_POST['user'];
       $password = $_POST['pass'];
@@ -77,11 +75,14 @@ class UserController
       
 
       if ($user && password_verify($password, $user->getPassword())) {
+        
+        $_SESSION['id'] = $user->getEmployeeId();
+        $_SESSION['user'] = $user;
         $_SESSION['username'] = $user->getUsername();
         $_SESSION['role'] = $user->getRole();
         $role = $user->getRole();
-        $_SESSION['userId'] = $user->getEmployeeId();
-
+        
+        
 
 
         if ($role == 'user') {

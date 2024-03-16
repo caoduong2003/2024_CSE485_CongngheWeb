@@ -1,6 +1,6 @@
 <?php
 require_once ROOT . '/app/services/EmployeeService.php';
-require_once ROOT . '/app/services/EmployeeService.php';
+require_once ROOT . '/app/services/DepartmentService.php';
 
 class EmployeeController
 {
@@ -8,6 +8,12 @@ class EmployeeController
     {
         $employeeService = new EmployeeService();
         $employees = $employeeService->getAllEmployee();
+
+        $itemsPerPage = 6;
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+        $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
+        $totalPages = ceil(count($employees) / $itemsPerPage);
+
         include ROOT . '/app/views/admin/index.php';
     }
 
@@ -17,9 +23,11 @@ class EmployeeController
         $id = $_GET['id'];
         $employeeService = new EmployeeService();
         $employees = $employeeService->getEmployeeByIdDp($id);
-        // echo '<pre>';
-        // echo print_r($employees);
-        // echo '</pre>';
+        $itemsPerPage = 6;
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+        $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
+        $totalPages = ceil(count($employees) / $itemsPerPage);
+
         include ROOT . '/app/views/employees/index.php';
     }
 
@@ -33,9 +41,30 @@ class EmployeeController
         include ROOT . '/app/views/employees/detail.php';
     }
     
-    public function create(){
+    public function adminSearch(){
+        session_start();
+        if(isset($_POST['search'])){
+            $name = $_POST['name'];
+            header('Location:'.PATH. '/public/index.php?controller=employee&action=adminSearch&name='.$name);
+
+        }
+
+        $name = $_GET['name'];
+        $employeeService = new EmployeeService();
+        $employees = $employeeService->search($name);
+        $itemsPerPage = 6;
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+        $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
+        $totalPages = ceil(count($employees) / $itemsPerPage);
+        include ROOT. '/app/views/admin/search.php';
 
         
+    }
+
+    public function create(){
+
+        $departmentService = new DepartmentService();
+        $departments = $departmentService->getAllDepartment();
         
         if($_SERVER['REQUEST_METHOD'] == 'POST'){
             if(isset($_POST['create'])){
@@ -65,29 +94,34 @@ class EmployeeController
         include ROOT. '/app/views/admin/create.php';
 
 
-        // $create = new EmployeeService();
-        // $employee = $create->addEmployee();
-        // if($employee){
 
-        // }
     }
 
     public function search(){
+        session_start();
         if(isset($_POST['search'])){
             $name = $_POST['name'];
-            $employeeService = new EmployeeService();
-            $employees = $employeeService->search($name);
-            // echo '<pre>';
-            // echo print_r($employees);
-            // echo '</pre>';
+            header('Location:'.PATH. '/public/index.php?controller=employee&action=search&name='.$name);
+
+            
             
         }
+
+        $name = $_GET['name'];
+        $employeeService = new EmployeeService();
+        $employees = $employeeService->search($name);
+        $itemsPerPage = 6;
+        $currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
+        $currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
+        $totalPages = ceil(count($employees) / $itemsPerPage);
         include ROOT. '/app/views/employees/search.php';
 
         
     }
 
     public function update(){
+        $departmentService = new DepartmentService();
+        $departments = $departmentService->getAllDepartment();
         $id = $_GET['id'];
             // $_SESSION['employeeId'] = $id;
             $employees = new EmployeeService();
@@ -103,7 +137,7 @@ class EmployeeController
                 $phone = $_POST['phone'];
                 $position = $_POST['position'];
                 $avatar = $_POST['avatar'];
-                $departmentId = $_POST['departmentId'];
+                $departmentId = $_POST['department'];
 
                 // $id = $_SESSION['employeeId'];
                 $id1 = $id;

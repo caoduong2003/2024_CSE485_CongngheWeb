@@ -11,7 +11,7 @@ class UserService {
       $users = [];
       while($row = $stsm->fetch()){
         // $hash_pwd = password_hash($row['password'],PASSWORD_DEFAULT);
-        $user = new User($row['Username'], $row['Password'] ,$row['role'],['EmployeeId'] );
+        $user = new User($row['Username'], $row['Password'] ,$row['role'],$row['EmployeeId'] );
         // $department = $row['DepartmentName'];
         $users[] = $user;
       }

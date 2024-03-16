@@ -1,8 +1,4 @@
 <?php
-$itemsPerPage = 6;
-$currentPage = isset($_GET['page']) ? $_GET['page'] : 1;
-$currentPageItems = array_slice($employees, ($currentPage - 1) * $itemsPerPage, $itemsPerPage);
-$totalPages = ceil(count($employees) / $itemsPerPage);
 
 // echo '<pre>';
 // echo print_r($employees);
@@ -57,7 +53,7 @@ $totalPages = ceil(count($employees) / $itemsPerPage);
     </div>
     <div class="pagination">
         <?php if ($currentPage > 1): ?>
-        <a href="?page=<?php echo $currentPage - 1; ?>">Previous</a>
+        <a href="<?= PATH.'/public/index.php?controller=employee&action=search&name='.$name.'&page='.$currentPage-1?>">Previous</a>
         <?php endif; ?>
         <?php for ($i = 1; $i <= $totalPages; $i++): ?>
         <?php if ($i == $currentPage): ?>
@@ -65,13 +61,13 @@ $totalPages = ceil(count($employees) / $itemsPerPage);
             <?php echo $i; ?>
         </span>
         <?php else: ?>
-        <a href="?page=<?php echo $i; ?>">
+        <a href="<?= PATH.'/public/index.php?controller=employee&action=search&name='.$name.'&page='.$i?>">
             <?php echo $i; ?>
         </a>
         <?php endif; ?>
         <?php endfor; ?>
         <?php if ($currentPage < $totalPages): ?>
-        <a href="?page=<?php echo $currentPage + 1; ?>">Next</a>
+        <a href="<?= PATH.'/public/index.php?controller=employee&action=search&name'.$name.'&page='.$currentPage+1?>">Next</a>
         <?php endif; ?>
     </div>
     <footer>
